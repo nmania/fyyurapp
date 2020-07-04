@@ -1,0 +1,57 @@
+{% extends 'layouts/main.html' %}
+{% block title %}New Artist{% endblock %}
+{% block content %}
+  <div class="form-wrapper">
+    <form id='form' method="post" class="form">
+      <h3 class="form-heading">List a new artist</h3>
+      <div class="form-group">
+        <label for="name">Name</label>
+        {{ form.name(id='name', class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+          <label>City & State</label>
+          <div class="form-inline">
+            <div class="form-group">
+              {{ form.city(id='city', class_ = 'form-control', placeholder='City', autofocus = true) }}
+            </div>
+            <div class="form-group">
+              {{ form.state(id='state', class_ = 'form-control', placeholder='State', autofocus = true) }}
+            </div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="phone">Phone</label>
+          {{ form.phone(id='phone', class_ = 'form-control', placeholder='xxx-xxx-xxxx', autofocus = true) }}
+        </div>
+      <div class="form-group">
+        <label for="genres">Genres</label>
+        <small>Ctrl+Click to select multiple</small>
+        {{ form.genres(id='genres', class_ = 'form-control', placeholder='Genres, separated by commas', autofocus = true) }}
+      </div>
+
+      <div class="form-group">
+        <label for="seeking_venue">Seeking Venue?</label>
+        {{ form.seeking_venue(id='seeking_venue', class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="seeking_description">Venue Description</label>
+        <small>What sort of venue are you looking for?</small>
+        {{ form.seeking_description(id='seeking_description', class_ = 'form-control', placeholder='Leave blank if not seeking a venue', autofocus = true) }}
+      </div>
+      <div class="form-group">
+          <label for="image_link">Image Link</label>
+          {{ form.image_link(id='image-link', class_ = 'form-control', placeholder='of all the talent', autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="website">Website</label>
+        {{ form.website(id='website', class_ = 'form-control', placeholder='showcase your great work', autofocus = true) }}
+      </div>
+
+      <div class="form-group">
+          <label for="genres">Facebook Link</label>
+          {{ form.facebook_link(id='fb-link', class_ = 'form-control', placeholder='http://', autofocus = true) }}
+        </div>
+      <input id='btn-submit' type="submit" value="Create Artist" class="btn btn-primary btn-lg btn-block">
+    </form>
+  </div>
+{% endblock %}
