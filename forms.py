@@ -120,7 +120,7 @@ class VenueForm(Form):
         'website', validators=[Optional()]
     )
     seeking_talent = SelectField(
-        'seeking_talent', validators=[Optional()], defailt=True,
+        'seeking_talent', validators=[Optional()], default=True,
         choices=[
             ('Yes', 'Yes'),
             ('No', 'No')
@@ -234,7 +234,7 @@ class ArtistForm(Form):
         'website', validators=[Optional()]
     )
     seeking_venue = SelectField(
-        'seeking_venue', validators=[Optional()], defailt=True,
+        'seeking_venue', validators=[Optional()], default=True,
         choices=[
             ('Yes', 'Yes'),
             ('No', 'No')
