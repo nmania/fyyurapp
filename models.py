@@ -19,7 +19,6 @@ class Venue(db.Model):
     seeking_talent = db.Column(db.Boolean)
     shows = db.relationship('Show', backref="venue", passive_deletes=True, lazy=True)
 
-    # TODO: implement any missing fields, as a database migration using Flask-Migrate
     def __repr__(self):
         return f'<Venue {self.id} {self.name}>'
 
@@ -39,11 +38,9 @@ class Artist(db.Model):
     seeking_description = db.Column(db.String)
     shows = db.relationship('Show', backref="artist", passive_deletes=True, lazy=True)
     
-    # TODO: implement any missing fields, as a database migration using Flask-Migrate
     def __repr__(self):
         return f'<Artist {self.id} {self.name}>'
 
-# TODO Implement Show and Artist models, and complete all model relationships and properties, as a database migration.
 class Show(db.Model):
       __tablename__ = 'show'
       
